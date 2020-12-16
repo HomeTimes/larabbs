@@ -12,7 +12,7 @@
   <title>@yield('title', 'LaraBBS') - Laravel 进阶教程</title>
 
   <!-- Styles -->
-  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <link href="{{mix('css/app.css') }}" rel="stylesheet">
 
 </head>
 
@@ -33,7 +33,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{mix('js/app.js') }}"></script>
 </body>
 
 </html>
