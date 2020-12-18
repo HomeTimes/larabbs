@@ -25,8 +25,8 @@ body {
   margin-top: 0px;
 }
 .footer{
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -38,4 +38,12 @@ body {
         color: inherit;
       }
       }
+}
+.register-page {
+  img.captcha {
+    cursor: pointer;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 3px;
+  }
 }

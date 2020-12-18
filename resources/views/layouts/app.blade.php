@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSRF Token -->
+  <!-- resources/js/bootstrap.js 文件中提供的 Axios HTTP 库会使用 cookie 中加密的 XSRF-TOKEN 的值然后在请求时自动发送 X-XSRF-TOKEN 标头 -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>@yield('title', 'LaraBBS') - Laravel 进阶教程</title>
