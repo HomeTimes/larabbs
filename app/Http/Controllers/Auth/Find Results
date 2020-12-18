@@ -1,0 +1,43 @@
+Searching 25905 files for "App\Models\User"
+
+C:\Users\Home\Code\larabbs\app\Http\Controllers\Auth\RegisterController.php:
+    5  use App\Http\Controllers\Controller;
+    6  use App\Providers\RouteServiceProvider;
+    7: use App\Models\User;
+    8  use Illuminate\Foundation\Auth\RegistersUsers;
+    9  use Illuminate\Support\Facades\Hash;
+   ..
+   68       *
+   69       * @param  array  $data
+   70:      * @return \App\Models\User
+   71       */
+   72      protected function create(array $data)
+
+C:\Users\Home\Code\larabbs\config\auth.php:
+   69          'users' => [
+   70              'driver' => 'eloquent',
+   71:             'model' => App\Models\User::class,
+   72          ],
+   73
+
+C:\Users\Home\Code\larabbs\database\factories\UserFactory.php:
+    3  /** @var \Illuminate\Database\Eloquent\Factory $factory */
+    4
+    5: use App\Models\User;
+    6  use Faker\Generator as Faker;
+    7  use Illuminate\Support\Str;
+
+C:\Users\Home\Code\larabbs\vendor\laravel\ui\stubs\Auth\RegisterController.stub:
+    5  use App\Http\Controllers\Controller;
+    6  use App\Providers\RouteServiceProvider;
+    7: use App\Models\User;
+    8  use Illuminate\Foundation\Auth\RegistersUsers;
+    9  use Illuminate\Support\Facades\Hash;
+   ..
+   61       *
+   62       * @param  array  $data
+   63:      * @return \App\Models\User
+   64       */
+   65      protected function create(array $data)
+
+6 matches across 4 files
