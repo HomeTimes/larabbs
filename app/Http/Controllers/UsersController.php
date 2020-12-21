@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
-
+use App\Handlers\ImageUploadHandler;
 use App\Models\User;
 class UsersController extends Controller
 {
+ public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
 
  public function show (User $user){
     return View('users.show',compact('user'));
@@ -15,8 +19,15 @@ class UsersController extends Controller
  public function edit (User $user){
     return View('users.edit',compact('user'));
  }
- public  function update(UserRequest $Request,User $user){
-    $user->update($Request->all());
+ public  function update(UserRequest $request,ImageUploadHandler $uploader ,User $user){
+    // dd($Request->avatar);
+    $data = $request->all();
+    if($request->avatar){
+        $result=$uploader->save($request->avatar,'avatars',$user->id);
+    }
+    if($result){
+       $data['avatar']=$result['path'];
+    }
     return redirect()->route('users.show',$user->id)->with('success','更新成功');
  }
 }
