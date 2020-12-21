@@ -17,10 +17,11 @@ class UsersController extends Controller
     return View('users.show',compact('user'));
  }
  public function edit (User $user){
+   $this->authorize('update', $user);
     return View('users.edit',compact('user'));
  }
  public  function update(UserRequest $request,ImageUploadHandler $uploader ,User $user){
-
+   $this->authorize('update', $user);
     $data = $request->all();
     if($request->avatar){
         $result=$uploader->save($request->avatar,'avatars',$user->id,416);
