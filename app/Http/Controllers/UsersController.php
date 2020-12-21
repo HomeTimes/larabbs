@@ -20,14 +20,15 @@ class UsersController extends Controller
     return View('users.edit',compact('user'));
  }
  public  function update(UserRequest $request,ImageUploadHandler $uploader ,User $user){
-    // dd($Request->avatar);
+
     $data = $request->all();
     if($request->avatar){
         $result=$uploader->save($request->avatar,'avatars',$user->id);
+        if($result){
+       $data['avatar'] = $result['path'];
     }
-    if($result){
-       $data['avatar']=$result['path'];
     }
+    $user->update($data);
     return redirect()->route('users.show',$user->id)->with('success','更新成功');
  }
 }
